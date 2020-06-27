@@ -28,6 +28,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "clinet", "build", "index.html"))
   );
 }
+console.log(process.env.NODE_ENV);
 
 const PORT = process.env.PORT || 5000;
 

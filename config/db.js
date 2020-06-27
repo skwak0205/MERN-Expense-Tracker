@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const config = require("./key");
+
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(config.mongoURI, {
@@ -11,8 +12,9 @@ const connectDB = async () => {
     console.log(
       `MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold
     );
-  } catch (error) {
-    console.log(`Error: ${error.message}`.red);
+  } catch (err) {
+    console.log(`Error: ${err.message}`.red);
+
     process.exit(1);
   }
 };
